@@ -106,7 +106,7 @@ namespace PhotoStorage.Controllers
                 HttpFileCollectionBase files = Request.Files;
                 int fileCount = files.Count;
 
-                //This is changed - use UploadFromStreamAsync instead of UploadFromFile
+                //Using UploadFromStreamAsync instead of UploadFromFile
                 if (fileCount > 0) {
                     for (int i = 0; i < fileCount; i++) {
                         CloudBlockBlob blob = blobContainer.GetBlockBlobReference(GetRandomBlobName(files[i].FileName));
